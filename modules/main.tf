@@ -2,10 +2,11 @@ provider "aws" {
   region = "ap-south-1"
 }
 
-module "ec2_instance" {
+
+  module "ec2_instance" {
   source = "./modules/ec2_instance"
-  ami           = var.aws_value
-  instance_type = var.aws_instance_type
+  ami_value = "ami-053b0d53c279acc90" # replace this
+  instance_type_value = "t2.micro"
   key_name      = "aws_logins"
 
 }
